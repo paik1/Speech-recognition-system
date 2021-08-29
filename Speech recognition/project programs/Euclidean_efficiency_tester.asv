@@ -1,0 +1,9 @@
+ load newtestmatrix1.mat;
+ load
+ newfilterbankarraydkk=[newfilterbankarraydkk zeros(1,50-length(newfilterbankarraydkk))];
+for i=1:100
+    output(i) = sqrt(sum((newfilterbankarraydkk-refmat(i,:)).^2));
+end
+
+[~,index] = min(output);
+disp(floor((index-1)/10));

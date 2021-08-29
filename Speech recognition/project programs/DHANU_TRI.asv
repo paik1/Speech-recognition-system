@@ -1,0 +1,16 @@
+clc
+clear all;
+DHANUrefmat=[];
+for i=0:9
+  for  j=6:10
+      load(sprintf('%d_PES_%d.mat',i,j));
+      for k=1:1
+      DHANUrefmat(5*i+k+1,:)=[PHONEME_NUM_ARRAY];
+      end
+ 
+end
+end
+DHANUrefmat1=[];
+DHANUrefmat1=DHANUrefmat(2:end,:);
+
+   save('DHANU_PHONEME_2','DHANUrefmat1');
